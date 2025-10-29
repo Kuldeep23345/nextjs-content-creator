@@ -58,7 +58,7 @@ export const Header = () => {
 
           <Unauthenticated>
             <SignInButton>
-              <Button variant={"ghost"} size={"sm"} className="cursor-pointer text-white hover:bg-transparent  hover:text-purple-300">
+              <Button variant={"ghost"} size={"sm"} className="cursor-pointer text-white hover:bg-transparent  hover:text-purple-300 ">
                 Sign In
               </Button>
             </SignInButton>
