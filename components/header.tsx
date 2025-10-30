@@ -12,6 +12,9 @@ import { LayoutDashboard } from "lucide-react";
 export const Header = () => {
   const { isLoading, isAuthenticated } = useStoreUser();
   const path = usePathname();
+  if (path.includes('dashboard')) {
+    return null;
+  }
 
   return (
     <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-3xl px-4">
@@ -53,12 +56,16 @@ export const Header = () => {
                 <span className="hidden md:inline ml-2">Dashboard</span>
               </Button>
             </Link>
-            <UserButton/>
+            <UserButton />
           </Authenticated>
 
           <Unauthenticated>
             <SignInButton>
-              <Button variant={"ghost"} size={"sm"} className="cursor-pointer text-white hover:bg-transparent  hover:text-purple-300 ">
+              <Button
+                variant={"ghost"}
+                size={"sm"}
+                className="cursor-pointer text-white hover:bg-transparent  hover:text-purple-300 "
+              >
                 Sign In
               </Button>
             </SignInButton>
